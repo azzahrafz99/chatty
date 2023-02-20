@@ -1,0 +1,24 @@
+<div id="chatroom_container" class="row bg-dark text-light">
+  <div id="side_panel" class="col-sm-4 col-md-4 col-lg-4">
+    <h5><%= current_user.email %></h5>
+    <h4>Users</h4>
+    <%= turbo_stream_from "users" %>
+    <div id="users">
+      <%= render @users %>
+    </div>
+
+    <h4>Rooms</h4>
+    <%= turbo_stream_from "rooms" %>
+    <div id="rooms">
+      <%= render @rooms %>
+    </div>
+
+    <%= render 'layouts/new_room_form' %>
+  </div>
+
+  <div id="room_container" class="col-sm-8 col-md-8 col-lg-8">
+    <% if @single_room %>
+      <h4 class="text-center"><%= @single_room.name%></h4>
+    <% end %>
+  </div>
+</div>

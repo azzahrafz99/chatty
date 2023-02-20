@@ -6,6 +6,12 @@
           <i class="fa fa-home"></i> Home
         <% end %>
       </li>
+
+      <li class="nav-item <%= request.path.include?('rooms') ? 'active' : '' %>">
+        <%= link_to rooms_path, class: "nav-link", target: "_top" do %>
+          <i class="fa fa-weixin"></i> Rooms
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>
