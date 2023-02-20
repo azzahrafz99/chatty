@@ -2,31 +2,29 @@
   <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1">
     <div class="chatroom_container row bg-white">
       <div class="side_panel col-sm-4 col-md-4 col-lg-4">
-        <div class="header">
-          <div class="header__current_user">
-            <div class="avatar">
-              <% if current_user.avatar.attached? %>
-                <%= image_tag current_user.avatar %>
-              <% else %>
-                <%= image_tag 'avatar' %>
-              <% end %>
-            </div>
-            <h5><%= link_to current_user.email, current_user %></h5>
+        <div class="side_panel__current_user">
+          <div class="avatar">
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar %>
+            <% else %>
+              <%= image_tag 'avatar' %>
+            <% end %>
+          </div>
+          <h5><%= link_to current_user.email, current_user %></h5>
+        </div>
+
+        <div class="side_panel__info">
+          <h4>Users</h4>
+          <%= turbo_stream_from "users" %>
+          <div id="users">
+            <%= render @users %>
           </div>
 
-          <div class="header__info">
-            <h4>Users</h4>
-            <%= turbo_stream_from "users" %>
-            <div id="users">
-              <%= render @users %>
-            </div>
-
-            <h4>Rooms</h4>
-            <%= render 'rooms/new_room_form' %>
-            <%= turbo_stream_from "rooms" %>
-            <div id="rooms">
-              <%= render @rooms %>
-            </div>
+          <h4>Rooms</h4>
+          <%= render 'rooms/new_room_form' %>
+          <%= turbo_stream_from "rooms" %>
+          <div id="rooms">
+            <%= render @rooms %>
           </div>
         </div>
       </div>
@@ -39,7 +37,7 @@
             </div>
 
             <%= turbo_stream_from @single_room %>
-            <div id="messages" class="bg-secondary">
+            <div id="messages">
               <%= render @messages %>
             </div>
               <%= render 'messages/new_message_form' %>

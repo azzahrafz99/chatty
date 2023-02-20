@@ -10,6 +10,19 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <style>
+    <% if current_user %>
+      <%= ".message-#{current_user.id}" %> {
+        text-align: right;
+      }
+
+      <%= ".message-#{current_user.id}" %> .message__body {
+        background-color: #2e59d9;
+        color: white;
+      }
+    <% end %>
+  </style>
+
   <body>
     <% content_for :alert do %>
       <%= render 'shared/flashes' %>

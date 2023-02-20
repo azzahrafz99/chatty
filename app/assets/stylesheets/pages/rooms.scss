@@ -12,34 +12,39 @@
   border-right: 1px solid $light-grey;
   padding: 35px;
 
-  .header {
-    &__current_user {
-      h5 {
-        font-size: 20px;
-        display: inline;
-        margin-left: 10px;
-      }
-    }
-
-    &__info {
-      h4 {
-        font-size: 18px;
-        margin-top: 30px;
-      }
-    } 
-
-    .avatar {
+  &__current_user {
+    h5 {
+      font-size: 20px;
       display: inline;
-
-      img {
-        width: 30px;
-        height: 30px;
-      }
+      margin-left: 10px;
     }
+  }
 
-    #rooms {
-      margin-top: 10px;
+  &__info {
+    h4 {
+      font-size: 18px;
+      margin-top: 30px;
     }
+  }
+
+  #users, #rooms {
+    height: 200px;
+    max-height: 200px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .avatar {
+    display: inline;
+
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  #rooms {
+    margin-top: 10px;
   }
 }
 

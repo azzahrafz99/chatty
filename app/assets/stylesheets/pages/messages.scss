@@ -1,23 +1,35 @@
 #messages {
+  background-color: $light-dusk-purple2;
   height: calc(100% - 150px);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .msg-content {
   margin-right: 5px;
 }
 
-.message-box {
-  background-color: #555555;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  max-width: 40%;
-  padding: 5px;
-  width: fit-content;
-  word-wrap: break-word;
-}
-
 .message-form {
   margin: 30px;
+}
+
+.message {
+  margin: 15px 10px;
+
+  &__user {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  &__body {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 13px 0 rgba(82,63,105,.05);
+    display: inline;
+    font-size: 15px;
+    max-width: 40%;
+    padding: 8px;
+    width: fit-content;
+    word-wrap: break-word;
+  }
 }
