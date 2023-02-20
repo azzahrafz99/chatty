@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Room do
   describe 'Associations' do
     it { is_expected.to have_many(:messages) }
+    it { is_expected.to have_many(:participants).dependent(:destroy) }
   end
 
   describe 'Validations' do

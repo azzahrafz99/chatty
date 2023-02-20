@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_20_043648) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_20_101349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -52,6 +52,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_043648) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "participants", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_participants_on_room_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
+  end
+
   create_table "rooms", force: :cascade do |t|
     t.string "name"
     t.boolean "is_private", default: false
@@ -79,4 +88,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_043648) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "participants", "rooms"
+  add_foreign_key "participants", "users"
 end
