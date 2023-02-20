@@ -1,5 +1,5 @@
 {
-  "name": "my-wallet",
+  "name": "chatty",
   "private": true,
   "dependencies": {
     "@hotwired/stimulus": "^3.2.1",
@@ -17,5 +17,8 @@
   "version": "0.1.0",
   "devDependencies": {
     "webpack-dev-server": "^3"
+  },
+  "engines": {
+    "node": "14.21.2"
   }
 }
