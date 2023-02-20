@@ -1,0 +1,79 @@
+#single_room {
+  height: 70vh;
+
+  .header {
+    border-top-right-radius: 10px;
+    padding-bottom: 5px;
+    padding-top: 15px;
+  }
+}
+
+.side_panel {
+  border-right: 1px solid $light-grey;
+  padding: 35px;
+
+  .header {
+    &__current_user {
+      h5 {
+        font-size: 20px;
+        display: inline;
+        margin-left: 10px;
+      }
+    }
+
+    &__info {
+      h4 {
+        font-size: 18px;
+        margin-top: 30px;
+      }
+    } 
+
+    .avatar {
+      display: inline;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    #rooms {
+      margin-top: 10px;
+    }
+  }
+}
+
+.chatroom_container {
+  border-radius: 10px;
+  box-shadow: 0 0 13px 0 rgba(82,63,105,.05);
+}
+
+.chatroom_container, .room_container {
+  height: 70vh;
+  margin-right: 0px !important;
+}
+
+.room, .user {
+  padding: 5px 0;
+}
+
+.room-form {
+  .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  input.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.room-icon {
+  margin-top: 35%;
+
+  i {
+    color: $light-grey;
+    font-size: 120px;
+  }
+}

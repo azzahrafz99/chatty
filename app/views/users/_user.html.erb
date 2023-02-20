@@ -1,3 +1,11 @@
-<div>
+<div class="user">
+  <div class="avatar">
+    <% if user.avatar.attached? %>
+      <%= image_tag user.avatar %>
+    <% else %>
+      <%= image_tag 'avatar' %>
+    <% end %>
+  </div>
+
   <%= link_to user.email, user %>
 </div>

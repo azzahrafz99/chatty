@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :users, only: [:show]
-  resources :rooms
+  
+  resources :rooms do
+    resources :messages
+  end
 end

@@ -24,41 +24,6 @@
     }
   }
 
-  &__wallet {
-    border-radius: 10px;
-    padding: 30px 20px;
-
-    .card-header {
-      color: $primary;
-      font-size: 22px;
-      font-weight: 500;
-      padding: 10px 0;
-
-      a {
-        &:hover {
-          text-decoration: none;
-        }
-      }
-    }
-
-    .card-body {
-      font-size: 18px;
-      font-weight: 400;
-      padding: 10px 0;
-
-      small {
-        color: $light-grey2;
-        font-size: 14px;
-      }
-
-      p {
-        color: $light-primary;
-        font-size: 20px;
-        margin-top: 5px;
-      }
-    }
-  }
-
   &__form {
     padding: 0;
 

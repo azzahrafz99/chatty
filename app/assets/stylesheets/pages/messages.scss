@@ -1,0 +1,23 @@
+#messages {
+  height: calc(100% - 150px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.msg-content {
+  margin-right: 5px;
+}
+
+.message-box {
+  background-color: #555555;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-width: 40%;
+  padding: 5px;
+  width: fit-content;
+  word-wrap: break-word;
+}
+
+.message-form {
+  margin: 30px;
+}
