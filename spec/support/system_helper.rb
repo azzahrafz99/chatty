@@ -32,7 +32,7 @@ module TestingSupport
     end
 
     def change_password_success(user)
-      visit edit_user_registration_path(user)
+      visit_edit_profile(user)
       fill_in 'user_password', with: 'new_password'
       fill_in 'user_password_confirmation', with: 'new_password'
       fill_in 'user_current_password', with: 'password'
@@ -40,7 +40,7 @@ module TestingSupport
     end
 
     def change_password_failed(user)
-      visit edit_user_registration_path(user)
+      visit_edit_profile(user)
       fill_in 'user_password', with: 'new_password'
       fill_in 'user_password_confirmation', with: 'new_password'
       fill_in 'user_current_password', with: 'passwords'
@@ -48,7 +48,7 @@ module TestingSupport
     end
 
     def edit_profile_success(user)
-      visit edit_user_registration_path(user)
+      visit_edit_profile(user)
       fill_in 'user_first_name', with: 'John'
       fill_in 'user_last_name', with: 'Doe'
       fill_in 'user_current_password', with: 'password'
@@ -56,10 +56,16 @@ module TestingSupport
     end
 
     def edit_profile_failed(user)
-      visit edit_user_registration_path(user)
+      visit_edit_profile(user)
       fill_in 'user_first_name', with: 'John'
       fill_in 'user_last_name', with: 'Doe'
       click_on 'Update'
+    end
+
+    def visit_edit_profile(user)
+      click_on user.email
+      click_on 'My Profile'
+      click_on 'edit-user'
     end
   end
 end
