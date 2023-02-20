@@ -13,5 +13,7 @@ class User < ApplicationRecord
 
   after_create_commit { broadcast_append_to 'users' }
 
-  has_many :messages, dependent: :destroy
+  # rubocop:disable Rails/HasManyOrHasOneDependent
+  has_many :messages
+  # rubocop:enable Rails/HasManyOrHasOneDependent
 end
