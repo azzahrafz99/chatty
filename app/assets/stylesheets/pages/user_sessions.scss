@@ -1,0 +1,41 @@
+.container-fluid {
+  .main-content {
+    margin-top: 25%;
+    padding: 0 100px;
+
+    img.logo {
+      width: 130px;
+    }
+  }
+
+  .background {
+    background: asset_url('background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.9);
+    height: 100%;
+    position: fixed;
+    width: 50%;
+
+    .credit {
+      bottom: 0;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      right: 40px;
+    }
+  }
+}
+
+.avatar {
+  margin: 15px 0;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
