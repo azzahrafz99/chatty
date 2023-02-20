@@ -21,11 +21,13 @@
               <%= render "users/shared/error_messages", resource: resource %>
 
               <div class="form-group">
-                <% if f.object.avatar.attached? %>
-                  <div class="avatar">
+                <div class="avatar">
+                  <% if f.object.avatar.attached? %>
                     <%= image_tag f.object.avatar %>
-                  </div>
-                <% end %>
+                  <% else %>
+                    <%= image_tag 'avatar.svg' %>
+                  <% end %>
+                </div>
 
                 <%= f.label :avatar %><br />
                 <%= f.file_field :avatar %>
