@@ -26,6 +26,6 @@ class Room < ApplicationRecord
   end
 
   def participant?(room, user)
-    room.participants.where(user: user).exists?
+    room.participants.exists?(user: user)
   end
 end
