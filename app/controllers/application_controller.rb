@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_status
 
   protected
 
@@ -15,5 +16,11 @@ class ApplicationController < ActionController::Base
       u.permit :first_name, :last_name, :birthdate, :email,
                :password, :password_confirmation, :current_password, :avatar
     end
+  end
+
+  private
+
+  def set_status
+    current_user&.update!(status: User.statuses[:online]) if current_user
   end
 end

@@ -4,12 +4,20 @@
   .header {
     border-bottom: 1px solid $light-dusk-purple2;
     border-top-right-radius: 10px;
-    padding-bottom: 5px;
-    padding-top: 15px;
+    padding: 15px;
 
-    h4 {
-      color: $info;
-      font-size: 18px;
+    .info {
+      margin: auto;
+      margin-left: 15px;
+
+      h4 {
+        color: $info;
+        font-size: 16px;
+      }
+    }
+
+    .icon-status {
+      left: 10px;
     }
   }
 }
@@ -47,11 +55,6 @@
       display: inline;
       margin-left: 5px;
     }
-
-    .avatar img {
-      height: 40px !important;
-      width: 40px !important;
-    }
   }
 
   &__info {
@@ -71,11 +74,6 @@
 
   .avatar {
     display: inline;
-
-    img {
-      width: 30px;
-      height: 30px;
-    }
   }
 
   #rooms {
@@ -103,6 +101,10 @@
 
 .room, .user {
   padding: 0 10px;
+}
+
+.user .avatar {
+  margin-right: 5px;
 }
 
 .room-form {

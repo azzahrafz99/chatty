@@ -3,12 +3,8 @@
 <div class="message-wrapper-<%=message.user.id%>">
   <div class="message-box message-<%= message.user.id %>">
     <div class="d-flex">
-      <div class="avatar">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar %>
-        <% else %>
-          <%= image_tag 'avatar.svg' %>
-        <% end %>
+      <div class="avatar avatar__small">
+        <%= image_tag user.display_avatar %>
       </div>
 
       <div class="body">

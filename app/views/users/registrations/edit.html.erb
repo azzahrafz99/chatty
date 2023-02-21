@@ -22,11 +22,7 @@
 
               <div class="form-group">
                 <div class="avatar">
-                  <% if f.object.avatar.attached? %>
-                    <%= image_tag f.object.avatar %>
-                  <% else %>
-                    <%= image_tag 'avatar.svg' %>
-                  <% end %>
+                  <%= image_tag f.object.display_avatar %>
                 </div>
 
                 <%= f.label :avatar %><br />

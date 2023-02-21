@@ -1,6 +1,6 @@
 #messages {
   background-color: $light-dusk-purple3;
-  height: calc(100% - 85px);
+  height: calc(100% - 150px);
   overflow-x: hidden;
   overflow-y: auto;
   padding: 10px 0;
@@ -21,11 +21,6 @@
   .avatar {
     margin: 0;
     margin-right: 8px;
-
-    img {
-      height: 30px;
-      width: 30px;
-    }
   }
 
   .name {

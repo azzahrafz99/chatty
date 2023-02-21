@@ -1,0 +1,31 @@
+<div class="side_panel col-sm-4 col-md-4 col-lg-4 text-light">
+  <div class="side_panel__logo">
+    <%= link_to image_tag('logo2.png'), root_path %>
+  </div>
+  <div class="side_panel__current_user">
+    <div class="avatar avatar__small">
+      <%= image_tag current_user.display_avatar %>
+      <%= turbo_stream_from "user_status" %>
+
+      <div class="icon-status">
+        <%= render "users/status", user: current_user %>
+      </div>
+    </div>
+    <h5><%= link_to current_user.email, current_user %></h5>
+  </div>
+
+  <div class="side_panel__info">
+    <h4>Users</h4>
+    <%= turbo_stream_from "users" %>
+    <div id="users">
+      <%= render users %>
+    </div>
+
+    <h4>Rooms</h4>
+    <%= render 'rooms/new_room_form' %>
+    <%= turbo_stream_from "rooms" %>
+    <div id="rooms">
+      <%= render rooms %>
+    </div>
+  </div>
+</div>
