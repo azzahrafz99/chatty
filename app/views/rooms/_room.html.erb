@@ -1,3 +1,5 @@
-<div class="room">
-  <%= link_to room.name, room %>
-</div>
+<li class="list-group-item d-flex align-items-center justify-content-between <%= @single_room.eql?(room) ? 'active' : '' %>">
+  <div class="room">
+    <%= link_to room.name, room, data: { turbo: "false" } %>
+  </div>
+</li>

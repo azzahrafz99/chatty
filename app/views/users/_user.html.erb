@@ -1,11 +1,19 @@
-<div class="user">
-  <div class="avatar">
-    <% if user.avatar.attached? %>
-      <%= image_tag user.avatar %>
-    <% else %>
-      <%= image_tag 'avatar.svg' %>
-    <% end %>
-  </div>
+<% if @single_room && @single_room.participant?(@single_room, user) %>
+  <% isActive = 'active' %>
+<% else %>
+  <% isActive = '' %>
+<% end %>
 
-  <%= link_to user.email, direct_message_path(user) %>
-</div>
+<li class="list-group-item d-flex align-items-center justify-content-between <%= isActive %>">
+  <div class="user">
+    <div class="avatar">
+      <% if user.avatar.attached? %>
+        <%= link_to image_tag(user.avatar), direct_message_path(user), data: { turbo: "false" } %>
+      <% else %>
+        <%= link_to image_tag('avatar.svg'), direct_message_path(user), data: { turbo: "false" } %>
+      <% end %>
+    </div>
+
+    <%= link_to user.email, direct_message_path(user), data: { turbo: "false" } %>
+  </div>
+</li>

@@ -1,8 +1,21 @@
-<div class="message message-<%= message.user.id %>">
-  <% unless message.room.is_private? %>
-    <h6 class="message__user"><%= message.user.email %></h6>
-  <% end %>
-  <div class="message__body">
-    <%= message.body %>
+<% user = message.user %>
+
+<div class="message-wrapper-<%=message.user.id%>">
+  <div class="message-box message-<%= message.user.id %>">
+    <div class="d-flex">
+      <div class="avatar">
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar %>
+        <% else %>
+          <%= image_tag 'avatar.svg' %>
+        <% end %>
+      </div>
+
+      <div class="body">
+        <h6 class="name"> <%= user.email %></h6>
+        <p class="content"><%= message.body %></p>
+        <p class="time"><%= message.created_at.strftime('%H:%M') %></p>
+      </div>
+    </div>
   </div>
 </div>

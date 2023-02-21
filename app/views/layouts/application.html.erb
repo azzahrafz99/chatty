@@ -13,12 +13,37 @@
   <style>
     <% if current_user %>
       <%= ".message-#{current_user.id}" %> {
+        margin: 2px 10px;
         text-align: right;
       }
 
-      <%= ".message-#{current_user.id}" %> .message__body {
+      <%= ".message-#{current_user.id}" %> > .d-flex {
+        justify-content: flex-end;
+      }
+
+      <%= ".message-#{current_user.id}" %> > .d-flex > .avatar {
+        margin-left: 5px;
+        order: 1;
+      }
+
+      <%= ".message-#{current_user&.id}" %> > .d-flex > .body {
         background-color: #2e59d9;
         color: white;
+        margin-left: 0;
+      }
+
+      <%= ".message-#{current_user&.id}" %> > .d-flex > .body > .time {
+        text-align: left;
+      }
+
+      <%= ".message-#{current_user&.id}" %> > .d-flex > .body > .name {
+        color: white;
+        opacity: 80%;
+      }
+
+      <%= ".message-wrapper-#{current_user&.id}" %> {
+        display: flex;
+        justify-content: flex-end
       }
     <% end %>
   </style>

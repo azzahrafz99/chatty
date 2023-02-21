@@ -1,5 +1,8 @@
 <div class="chatroom_container row bg-white mt-3">
   <div class="side_panel col-sm-4 col-md-4 col-lg-4 text-light">
+    <div class="side_panel__logo">
+      <%= link_to image_tag('logo2.png'), root_path %>
+    </div>
     <div class="side_panel__current_user">
       <div class="avatar">
         <% if current_user.avatar.attached? %>
