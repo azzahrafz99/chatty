@@ -59,6 +59,7 @@ module TestingSupport
       visit_edit_profile(user)
       fill_in 'user_first_name', with: 'John'
       fill_in 'user_last_name', with: 'Doe'
+      fill_in 'user_current_password', with: 'passworsd'
       click_on 'Update'
     end
 
