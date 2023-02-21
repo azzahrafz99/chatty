@@ -63,7 +63,9 @@ module TestingSupport
     end
 
     def visit_edit_profile(user)
-      click_on user.email
+      within('.navbar-nav') do
+        click_on user.email
+      end
       click_on 'My Profile'
       click_on 'edit-user'
     end

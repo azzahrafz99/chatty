@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-12 col-md-8 offset-md-2 col-lg-8 offset-lg-2">
+  <div class="col-12">
     <div class="card card__custom mb-4">
       <div class="card-header">
         <div class="row">
@@ -33,47 +33,55 @@
                 <%= f.file_field :avatar %>
               </div>
 
-              <div class="form-group">
-                <%= f.label :first_name %><br />
-                <%= f.text_field :first_name, autofocus: true, class: "form-control", autocomplete: "first_name" %>
+              <div class="row">
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :first_name, required: true %><br />
+                  <%= f.text_field :first_name, autofocus: true, class: "form-control", autocomplete: "first_name", required: true %>
+                </div>
+
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :last_name, required: true %><br />
+                  <%= f.text_field :last_name, autofocus: true, class: "form-control", autocomplete: "last_name", required: true %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= f.label :last_name %><br />
-                <%= f.text_field :last_name, autofocus: true, class: "form-control", autocomplete: "last_name" %>
+              <div class="row">
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :birthdate %><br />
+                  <%= f.date_field :birthdate, autofocus: true, class: "form-control", autocomplete: "birthdate" %>
+                </div>
+
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email" %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= f.label :birthdate %><br />
-                <%= f.date_field :birthdate, autofocus: true, class: "form-control", autocomplete: "birthdate" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :email %><br />
-                <%= f.email_field :email, autofocus: true, class: "form-control", autocomplete: "email" %>
-              </div>
 
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
                 <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
               <% end %>
 
-              <div class="form-group">
-                <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-                <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
-                <% if @minimum_password_length %>
-                  <br />
-                  <em><%= @minimum_password_length %> characters minimum</em>
-                <% end %>
+              <div class="row">
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+                  <%= f.password_field :password, class: "form-control", autocomplete: "new-password" %>
+                  <% if @minimum_password_length %>
+                    <em><%= @minimum_password_length %> characters minimum</em>
+                  <% end %>
+                </div>
+
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+                </div>
               </div>
 
-              <div class="form-group">
-                <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
-              </div>
-
-              <div class="form-group">
-                <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-                <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password" %>
+              <div class="row">
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                  <%= f.label :current_password, required: true %> <br /><i>(we need your current password to confirm your changes)</i><br />
+                  <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password", required: true %>
+                </div>
               </div>
 
               <div class="actions">

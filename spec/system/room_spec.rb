@@ -6,7 +6,6 @@ RSpec.describe 'Room' do
   context 'when user create new public room' do
     before do
       sign_in_user(user)
-      click_on 'Rooms'
       fill_in 'room_name', with: 'General'
       click_on 'Create Room'
     end
@@ -42,7 +41,6 @@ RSpec.describe 'Room' do
 
     before do
       sign_in_user(user)
-      click_on 'Rooms'
       click_on user2.email
     end
 

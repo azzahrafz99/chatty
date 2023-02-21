@@ -33,16 +33,18 @@
 
       <div class="container-fluid">
         <div class="row h-100">
-          <%= render 'shared/sidebar' %>
-
-          <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4 bg-secondary">
-            <div class="row header mt-5">
-              <%= yield :breadcrumb %>
+          <main role="main" class="col-12 px-4 bg-secondary">
+            <div class="row">
+              <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <%= yield :alert %>
+              </div>
             </div>
 
-            <%= yield :alert %>
-
-            <%= yield %>
+            <div class="row">
+              <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                <%= yield %>
+              </div>
+            </div>
           </main>
         </div>
       </div>
