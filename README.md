@@ -9,7 +9,7 @@ You can see and try the app here: [Chatty](https://safe-savannah-05773.herokuapp
 - [Requirements](#requirements)
 - [Local Setup](#local-setup)
 ## Technologies
-- Ruby 3.0.0
+- Ruby 3.2.1
 - Ruby on Rails 7.0.4.2
 - Postgres >= 14
 - Test: RSpec, Capybara, Selenium, Database Cleaner
@@ -39,7 +39,7 @@ You can see and try the app here: [Chatty](https://safe-savannah-05773.herokuapp
 
 ## Requirements
 These should be installed before you get started:
-- Ruby version 3.0.0
+- Ruby version 3.2.1
 - Bundler
 - Postgres >= 14
 - Git
