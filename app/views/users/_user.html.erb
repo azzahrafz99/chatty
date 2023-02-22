@@ -7,7 +7,7 @@
 <li class="list-group-item d-flex align-items-center justify-content-between <%= isActive %>">
   <div class="user">
     <div class="avatar avatar__small">
-      <%= link_to image_tag(user.display_avatar), direct_message_path(user), data: { turbo: "false" } %>
+      <%= link_to image_tag(user.display_avatar), direct_message_path(user) %>
       <%= turbo_stream_from "user_status" %>
 
       <div class="icon-status">
@@ -15,6 +15,6 @@
       </div>
     </div>
 
-    <%= link_to user.email, direct_message_path(user), data: { turbo: "false" } %>
+    <%= link_to user.email, direct_message_path(user) %>
   </div>
 </li>
