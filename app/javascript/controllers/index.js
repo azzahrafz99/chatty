@@ -3,8 +3,10 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+import MessagePreviewController from "./message_preview_controller"
 import ResetFormController from "./reset_form_controller"
 import ScrollController from "./scroll_controller"
 
+application.register("message-preview", MessagePreviewController)
 application.register("reset-form", ResetFormController)
 application.register("scroll", ScrollController)

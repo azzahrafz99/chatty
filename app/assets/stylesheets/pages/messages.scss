@@ -1,6 +1,6 @@
 #messages {
   background-color: $light-dusk-purple3;
-  height: calc(100% - 150px);
+  height: calc(70vh - 150px);
   overflow-x: hidden;
   overflow-y: auto;
   padding: 10px 0;
@@ -12,6 +12,11 @@
 
 .message-form {
   margin: 30px;
+  height: auto;
+
+  .btn {
+    height: 100%;
+  }
 }
 
 .message-box {
@@ -48,8 +53,117 @@
     .time {
       font-size: 10px;
       margin: 0;
+      margin-top: 2px;
       opacity: 60%;
       text-align: right;
     }
+
+    img {
+      border-radius: 10px;
+      width: 200px;
+    }
   }
+}
+
+.image-upload {
+  label {
+    margin-top: -4px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .upload-button {
+    color: $primary;
+    font-size: 25px !important;
+    padding: 10px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.75;
+    }
+  }
+}
+
+#attachment-previews {
+  bottom: 85px;
+  direction: rtl;
+  display: inline;
+  height: 70px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 300px;
+
+  .attachment-image-container {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+    font-size: 50px;
+    text-align: bottom;
+    vertical-align: middle;
+    line-height: 0px;
+
+    .preview-image {
+      display: block;
+      position: absolute;
+      background-size: cover;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.attachment-preview {
+  background-size: contain;
+  display: inline-block;
+  font-size: 50px !important;
+  height: 50px;
+  line-height: 0px;
+  margin-right: 10px;
+  max-height: 50px;
+  position: relative;
+  text-align: bottom;
+  vertical-align: middle;
+  width: 50px;
+}
+
+.cancel-upload-button {
+  color: $danger;
+  font-size: 15px !important;
+  opacity: 0.80 !important;
+  padding: 3px;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $light-dusk-purple2;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $light-dusk-purple;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $dusk-purple;
 }

@@ -71,4 +71,7 @@ consumer.subscriptions.create("AppearanceChannel", {
       timer = setTimeout(this.away.bind(this), timeInMilliseconds);
     }
   },
+  resetScroll() {
+    messages.scrollTop = messages.scrollHeight - messages.clientHeight;
+  }
 });

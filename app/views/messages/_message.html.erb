@@ -10,6 +10,19 @@
       <div class="body">
         <h6 class="name"> <%= user.email %></h6>
         <p class="content"><%= message.body %></p>
+        <% if message.attachments.attached? %>
+          <% message.attachments.each_with_index do |attachment, index| %>
+            <% if attachment.image? %>
+              <%= image_tag(message.chat_attachment(index)) %>
+            <% elsif attachment.video? %>
+              <%= video_tag(url_for(attachment), style:'height:auto; width:100%', controls:'') %>
+            <% elsif attachment.audio? %>
+              <%= audio_tag(url_for(attachment), controls: '') %>
+            <% else %>
+              <%= link_to attachment.filename, url_for(attachment), style:"text-decoration: none; color: #fff" %>
+            <% end %>
+          <% end %>
+        <% end %>
         <p class="time"><%= message.display_time %></p>
       </div>
     </div>
