@@ -21,6 +21,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_status
-    current_user&.update!(status: User.statuses[:online]) if current_user
+    current_user&.update!(status: User.statuses[:online])
   end
 end
