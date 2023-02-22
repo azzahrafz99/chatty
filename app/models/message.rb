@@ -14,12 +14,22 @@ class Message < ApplicationRecord
   end
 
   def today?
-    created_at.to_date == Date.current
+    created_at.to_date.eql? Date.current
+  end
+
+  def this_week?
+    created_at >= Date.current.at_beginning_of_week
+  end
+
+  def this_year?
+    created_at.year.eql? Date.current.year
   end
 
   def display_time
     return created_at.strftime('%H:%M') if today?
+    return created_at.strftime('%A %H:%M') if this_week?
+    return created_at.strftime('%d %b %H:%M') if this_year?
 
-    created_at.strftime('%A %H:%M')
+    created_at.strftime('%d %b %Y %H:%M')
   end
 end
