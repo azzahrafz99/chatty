@@ -2,7 +2,8 @@
 
 You can see and try the app here: [Chatty](https://safe-savannah-05773.herokuapp.com/).
 
-![Chatty](public/images/room_chat.png)
+![Private Room](public/images/private_room.png)
+![Public Room](public/images/public_room.png)
 
 ## Table of Content
 - [Technologies](#technologies)
